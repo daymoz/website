@@ -194,12 +194,12 @@ function WordShuffler(holder,opt){
     update(time);
   }
 
-  var heading = document.getElementById('heading');
+  // var heading = document.getElementById('heading');
 
-  var headText = new WordShuffler(heading,{
-    textColor : '#000',
-    timeOffset : 5,
-    mixCapital : true,
-    mixSpecialCharacters : true
-  });
+  // var headText = new WordShuffler(heading,{
+  //   textColor : '#000',
+  //   timeOffset : 5,
+  //   mixCapital : true,
+  //   mixSpecialCharacters : true
+  // });
   
