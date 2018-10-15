@@ -89,11 +89,13 @@ function Lettering(element) {
 
     function goShuffle(el, currentChar, charArray, shuffleInterval) {
       var secondes = 0;
-      var secTimer = setInterval(function() {
+      var secTimer = window.setInterval(function() {
+        //console.log('currentChar:'+currentChar);
         secondes += 1;
         if(secondes == 5) {
+          clearInterval(timer);
           clearInterval(secTimer);
-          return currentChar;
+          el.innerHTML = currentChar;
         }
       }, 1000);
       var timer = setInterval(function() {
