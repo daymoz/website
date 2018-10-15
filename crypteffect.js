@@ -1,4 +1,4 @@
-function Lettering(element) {
+function CryptEffect(element) {
   var that = this;
   const string = element.innerHTML;
   const parent = element.parentElement;
@@ -24,7 +24,7 @@ function Lettering(element) {
 
   this.shuffle = function(opt = null) {
     var options = {
-      animationDuration: 50,
+      animationDuration: 5,
       shuffleInterval: 50,
       mixSpecialCharacters: true
     }
@@ -75,7 +75,7 @@ function Lettering(element) {
     spans.forEach(function(item) {
       var currentChar = item.innerHTML;
       //console.log(currentChar);
-      item.innerHTML = goShuffle(item, currentChar, chars, shuffleInterval);
+      item.innerHTML = goShuffle(item, currentChar, chars, shuffleInterval, animationDuration);
       // console.log(chars);
       //console.log(shuffleInterval);
     });
@@ -87,12 +87,12 @@ function Lettering(element) {
       return randomChar;
     }
 
-    function goShuffle(el, currentChar, charArray, shuffleInterval) {
+    function goShuffle(el, currentChar, charArray, shuffleInterval, animationDuration) {
       var secondes = 0;
       var secTimer = window.setInterval(function() {
         //console.log('currentChar:'+currentChar);
         secondes += 1;
-        if(secondes == 5) {
+        if(secondes == animationDuration) {
           clearInterval(timer);
           clearInterval(secTimer);
           el.innerHTML = currentChar;
@@ -108,9 +108,13 @@ function Lettering(element) {
       }, shuffleInterval);
     }
   }
+
+  //this.
+
 }
 
+
 var $head = document.getElementById('heading');
-var head = new Lettering($head);
+var head = new CryptEffect($head);
 head.letterIt();
 head.shuffle();
