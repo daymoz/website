@@ -3,9 +3,7 @@ function CryptEffect(element) {
   const string = element.innerHTML;
   const parent = element.parentElement;
   
-  console.log(parent);
   var characters = [];
-  console.log(string);
 
   this.charactersArray = characters;
   
@@ -24,7 +22,7 @@ function CryptEffect(element) {
 
   this.shuffle = function(opt = null) {
     var options = {
-      animationDuration: 5,
+      animationDuration: 4,
       shuffleInterval: 50,
       mixSpecialCharacters: true
     }
@@ -96,6 +94,7 @@ function CryptEffect(element) {
           clearInterval(timer);
           clearInterval(secTimer);
           el.innerHTML = currentChar;
+          init();
         }
       }, 1000);
       var timer = setInterval(function() {
@@ -118,3 +117,28 @@ var $head = document.getElementById('heading');
 var head = new CryptEffect($head);
 head.letterIt();
 head.shuffle();
+
+var pageWrap = document.getElementById( 'pagewrap' ),
+  pages = [].slice.call( pageWrap.querySelectorAll( 'div.container' ) ),
+  currentPage = 0,
+  triggerLoading = [].slice.call( pageWrap.querySelectorAll( 'a.pageload-link' ) ),
+  preloaderAnim = document.getElementById( 'preloader-anim' );
+  loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 400, easingIn : mina.easeinout } );
+
+function init() {
+  preloaderAnim.classList.add('show');
+  // after some time hide loader
+  loader.show();
+  setTimeout( function() {
+    loader.hide();
+    preloaderAnim.classList.remove('show')
+
+    //classie.removeClass( pages[ currentPage ], 'show' );
+    pages[ currentPage ].classList.remove('show');
+    // update..
+    currentPage = currentPage ? 0 : 1;
+    pages[ currentPage ].classList.add('show');
+    //classie.addClass( pages[ currentPage ], 'show' );
+
+  }, 2000 );	
+}

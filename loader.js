@@ -2,7 +2,6 @@ function Load(element) {
     var that = this;
     var elementStyle = getComputedStyle(element);
     var elementWidthValue = element.offsetWidth;
-    console.log(elementWidthValue);
 
     function getRandomDigit(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -10,10 +9,12 @@ function Load(element) {
 
     this.go = function() {
         var timer = setInterval(function() {
-            elementWidthValue += getRandomDigit(5, 18);
-            console.log(elementWidthValue);
-            console.log(element);
-            element.style.width = "'"+elementWidthValue+"%'";
+            if(elementWidthValue <= 75) {
+                elementWidthValue += getRandomDigit(5, 25);
+            } else {
+                elementWidthValue += getRandomDigit(3, (100 - elementWidthValue));
+            }
+            element.style.width = elementWidthValue+'%';
             if(elementWidthValue >= 100) {
                 clearInterval(timer);
             }
