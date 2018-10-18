@@ -164,7 +164,7 @@ function init() {
   loader.show();
   setTimeout(function() {
     preloaderAnim.classList.remove('show');
-  }, 2850000);
+  }, 2850);
   setTimeout( function() {
     loader.hide();
     preloader.hide();
@@ -175,5 +175,5 @@ function init() {
     // pages[ currentPage ].classList.add('show');
     //classie.addClass( pages[ currentPage ], 'show' );
 
-  }, 28000000);	
+  }, 2800);	
 }
