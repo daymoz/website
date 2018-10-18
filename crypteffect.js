@@ -115,6 +115,8 @@ $brackets = document.querySelectorAll('.bracket');
 var $prev = document.getElementById('prevAnim');
 var $head = document.getElementById('heading');
 var $slash = document.querySelector('.slash');
+var $loadbar2 = document.getElementById('loadbar-2');
+var $innerLoadbar2 = document.getElementById('inner-load-2');
 var head = new CryptEffect($head);
 head.letterIt();
 head.shuffle();
@@ -143,16 +145,26 @@ function init() {
   }, 230);
   setTimeout(function() {
     $prev.style.transform = 'translateX(-30px)';
+    $loadbar2.style.transform = 'translateX(-30px)';
+    $loadbar2.style.width = 'calc(100% + 35px)';
   }, 700);
+  setTimeout(function() {
+    $loadbar2.classList.add('animate');
+  }, 800);
   setTimeout(function() {
     $slash.style.opacity = 1;
     $slash.classList.add('bounceIn');
   }, 1000);
+
+  setTimeout(function() {
+    $innerLoadbar2.style.width = '0';
+    $loadbar2.classList.add('reveal');
+  }, 1700);
   // after some time hide loader
   loader.show();
   setTimeout(function() {
     preloaderAnim.classList.remove('show');
-  }, 2700);
+  }, 2850000);
   setTimeout( function() {
     loader.hide();
     preloader.hide();
@@ -163,5 +175,5 @@ function init() {
     // pages[ currentPage ].classList.add('show');
     //classie.addClass( pages[ currentPage ], 'show' );
 
-  }, 2500 );	
+  }, 28000000);	
 }

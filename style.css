@@ -305,29 +305,56 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.25s linear;
 }
 
-#preloader-anim .preload-title #loadbar {
+#preloader-anim .preload-title #loadbar-2 {
     display: block;
     margin: 0 auto;
     width: 100%;
     background-color: #121212;
     height: 3px;
+    transition: all 0.25s ease-in-out 0.35s;
 }
 
-#preloader-anim .preload-title #loadbar #inner-load {
+
+#preloader-anim .preload-title #loadbar-2.animate {
+    height: 50px;
+    background-color: #fff;
+}
+
+#preloader-anim .preload-title #loadbar-2 #inner-load-2 {
     display: block;
-    margin: 0 auto;
     width: 100%;
     background-color: #fff;
     height: 100%;
-    transition: all 0.25s linear;
+    transition: all 1s ease 0.2s;
+    position: relative;
+    z-index: 1;
 }
-/* 
-#preloader-anim .preload-title h1::after {
+
+#preloader-anim .preload-title #loadbar-2::after {
     position: absolute;
-    content: '!';
-    left: 100%;
-    margin-left: 10px;
-} */
+    content: '100%';
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    line-height: 46px;
+    background-color: #000;
+    display: block;
+    font-size: 1.5rem;
+    font-family: 'Oxygen Mono', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+}
+
+#preloader-anim .preload-title #loadbar-2.reveal::after {
+    opacity: 1;
+}
+
+#preloader-anim .preload-title #loadbar-2 #inner-load-2.swipe {
+    width: 0;
+}
 
 .container {
 	display: none;
