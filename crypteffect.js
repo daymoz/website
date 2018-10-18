@@ -164,7 +164,7 @@ function init() {
   loader.show();
   setTimeout(function() {
     preloaderAnim.classList.remove('show');
-  }, 3350);
+  }, 3450);
   setTimeout( function() {
     loader.hide();
     preloader.hide();
