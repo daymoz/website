@@ -42,3 +42,15 @@
 //   this.style.transform = "translate(0, 0)";
 // }
 
+
+setTimeout(function() {
+    var $preloader = document.getElementById('preloader');
+    $preloader.classList.add('show');
+}, 500);
+$brackets = document.querySelectorAll('.bracket');
+setTimeout(function() {
+    $brackets.forEach(function(item) {
+        item.style.opacity = 1;
+        item.classList.add('bounceIn');
+      });
+}, 1500);

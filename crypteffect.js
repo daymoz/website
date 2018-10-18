@@ -111,8 +111,10 @@ function CryptEffect(element) {
 
 }
 
-
+$brackets = document.querySelectorAll('.bracket');
+var $prev = document.getElementById('prevAnim');
 var $head = document.getElementById('heading');
+var $slash = document.querySelector('.slash');
 var head = new CryptEffect($head);
 head.letterIt();
 head.shuffle();
@@ -135,12 +137,24 @@ function init() {
   }, 250);
   setTimeout(function() {
     preloaderAnim.classList.add('show');
+    $brackets.forEach(function(item) {
+      item.classList.remove('bounceIn');
+    });
   }, 230);
+  setTimeout(function() {
+    $prev.style.transform = 'translateX(-30px)';
+  }, 700);
+  setTimeout(function() {
+    $slash.style.opacity = 1;
+    $slash.classList.add('bounceIn');
+  }, 1000);
   // after some time hide loader
   loader.show();
+  setTimeout(function() {
+    preloaderAnim.classList.remove('show');
+  }, 2700);
   setTimeout( function() {
     loader.hide();
-    preloaderAnim.classList.remove('show')
     preloader.hide();
     //classie.removeClass( pages[ currentPage ], 'show' );
     // pages[ currentPage ].classList.remove('show');
@@ -149,5 +163,5 @@ function init() {
     // pages[ currentPage ].classList.add('show');
     //classie.addClass( pages[ currentPage ], 'show' );
 
-  }, 1000 );	
+  }, 2500 );	
 }
