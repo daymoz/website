@@ -117,6 +117,7 @@ var $head = document.getElementById('heading');
 var $slash = document.querySelector('.slash');
 var $loadbar2 = document.getElementById('loadbar-2');
 var $innerLoadbar2 = document.getElementById('inner-load-2');
+var $mainContent = document.getElementById('main-content');
 var head = new CryptEffect($head);
 head.letterIt();
 head.shuffle();
@@ -164,10 +165,11 @@ function init() {
   loader.show();
   setTimeout(function() {
     preloaderAnim.classList.remove('show');
-  }, 3450);
+    $mainContent.style.opacity = 1;
+  }, 3300);
   setTimeout( function() {
     loader.hide();
-    preloader.hide();
+    
     //classie.removeClass( pages[ currentPage ], 'show' );
     // pages[ currentPage ].classList.remove('show');
     // // update..

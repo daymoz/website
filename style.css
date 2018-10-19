@@ -244,7 +244,8 @@ body {
 }
 
 #preloader-anim {
-    display: none;
+    opacity: 0;
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -262,7 +263,7 @@ body {
 }
 
 #preloader-anim.show {
-    display: block;
+    opacity: 1;
 }
 
 #preloader-anim {
@@ -274,7 +275,7 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oxygen Mono', monospace;
+    font-family: 'Roboto Mono', monospace;
     margin: 0;
 }
 
@@ -341,7 +342,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #000;
     display: block;
     font-size: 1.5rem;
-    font-family: 'Krub', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
     font-weight: bold;
     text-align: center;
     color: #fff;
@@ -388,3 +389,6 @@ h1, h2, h3, h4, h5, h6 {
 	fill: #000;
 }
 
+#main-content{
+    opacity: 0;
+}
